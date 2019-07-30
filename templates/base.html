@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><a href="{{url_for('index')}}">Home</a></td>
+            <td><a href="{{url_for('about')}}">About</a></td>
+            <td><a href="{{url_for('rp_calc')}}">RP Calculator</a></td>
+        </tr>
+    </table>
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Here is your Rank Point!</h1>
+<table>
+    <tr>
+        <th>Subject Name</th>
+        <th>Grade</th>
+        <th>RP</th>
+    </tr>
+    {% for key in result_dict %}
+    <tr>
+        <td>
+            {{key}}
+        </td>
+        <td>
+            {{result_dict[key]}}
+        </td>
+        <td>
+            {{"{0:.2f}".format(result_mark_dict[key])}}
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>Total</td>
+        <td></td>
+        <td>
+            {{"{0:.2f}".format(rp)}} / {{"{0:.2f}".format(total_rp)}}
+        </td>
+    </tr>
+</table>
+{% endblock %}
