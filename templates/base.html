@@ -5,15 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style_sheet.css')}}">
     <title>My Website</title>
 </head>
 
 <body>
-    <table>
+    <table id="nav">
         <tr>
-            <td><a href="{{url_for('index')}}">Home</a></td>
-            <td><a href="{{url_for('about')}}">About</a></td>
-            <td><a href="{{url_for('rp_calc')}}">RP Calculator</a></td>
+            <td>
+                <a href="{{url_for('index')}}">
+                    <input type="button" class="nav-button" value="Home">
+                </a>
+            </td>
+            <td>
+                <a href="{{url_for('about')}}">
+                    <input type="button" class="nav-button" value="About">
+                </a>
+            </td>
+            <td>
+                <a href="{{url_for('rp_calc')}}">
+                    <input type="button" class="nav-button" value="RP Calculator">
+                </a>
+            </td>
         </tr>
     </table>
 
