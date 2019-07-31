@@ -1,19 +1,43 @@
-:root {
-	--my-color-1: #0b0c10;
-	--my-color-2: #efe2ba;
-	--my-color-3: #fc4445;
-	--my-color-4: #3feee6;
-}
 h1 {
-	border: 5px solid var(--my-color-2);
-	background-color: var(--my-color-3);
-	padding: 10px;
-	margin: 20px;
 	text-align: center;
-	color: var(--my-color-2);
 }
 
-.nav-button {
-	color: #0b0c10;
-	enable-background: 0%;
+a {
+	text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+	color: black;
+}
+
+/* visited link */
+a:visited {
+	color: black;
+}
+
+/* mouse over link */
+a:hover {
+	color: red;
+}
+
+/* selected link */
+a:active {
+	color: red;
+}
+
+#nav td {
+	width: 120px;
+	border: 1px solid black;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	align-content: center;
+}
+
+select {
+	width: 100%;
+	align: center;
 }

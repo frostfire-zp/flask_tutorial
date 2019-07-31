@@ -3,9 +3,9 @@
 <h1>Here is your Rank Point!</h1>
 <table>
     <tr>
-        <th>Subject Name</th>
-        <th>Grade</th>
-        <th>RP</th>
+        <th align="left">Subject Name</th>
+        <th align="left">Grade</th>
+        <th align="right">RP</th>
     </tr>
     {% for key in result_dict %}
     <tr>
@@ -15,7 +15,7 @@
         <td>
             {{result_dict[key]}}
         </td>
-        <td>
+        <td align="right">
             {{"{0:.2f}".format(result_mark_dict[key])}}
         </td>
     </tr>
@@ -23,7 +23,7 @@
     <tr>
         <td>Total</td>
         <td></td>
-        <td>
+        <td align="right">
             {{"{0:.2f}".format(rp)}} / {{"{0:.2f}".format(total_rp)}}
         </td>
     </tr>

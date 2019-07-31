@@ -2,10 +2,6 @@ from flask import Flask, render_template, url_for, redirect, request
 app = Flask(__name__)
 
 
-def calculate_rp(result):
-    pass
-
-
 @app.route('/')
 def index():
     return render_template('index.html')
