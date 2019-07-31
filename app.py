@@ -33,23 +33,30 @@ def rp_calc():
 
 @app.route('/rp_display/', methods=["POST"])
 def rp_display():
-    result_dict = dict(request.form)
+    temp_dict = dict(request.form)
+    result_dict = {}
+    for key in temp_dict.keys():
+        if type(temp_dict[key]) == list:
+            result_dict[key] = temp_dict[key][0]
+        else:
+            result_dict[key] = temp_dict[key]
     result_mark_dict = {}
     rp_dict = {"A": 20, "B": 17.5, "C": 15, "D": 12.5, "E": 10, "S": 5, "U": 0}
     rp_without_mt, rp_with_mt, rp, total_rp = 0, 0, 0, 0
 
     for key in result_dict:
+        grade = result_dict[key]
         if "H2" in key:
-            rp_without_mt += rp_dict[result_dict[key]]
+            rp_without_mt += rp_dict[grade]
             total_rp += 20
-            result_mark_dict[key] = rp_dict[result_dict[key]]
+            result_mark_dict[key] = rp_dict[grade]
         else:
             if key == "Mother Tongue":
-                rp_with_mt = rp_without_mt + rp_dict[result_dict[key]] / 2
+                rp_with_mt = rp_without_mt + rp_dict[grade] / 2
             else:
-                rp_without_mt += rp_dict[result_dict[key]] / 2
+                rp_without_mt += rp_dict[grade] / 2
             total_rp += 10
-            result_mark_dict[key] = rp_dict[result_dict[key]] / 2
+            result_mark_dict[key] = rp_dict[grade] / 2
 
     if rp_with_mt == 0:
         rp = rp_without_mt
