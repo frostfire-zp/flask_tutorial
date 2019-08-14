@@ -7,7 +7,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/about/') 
+@app.route('/about/')
 def about():
     return render_template('about.html')
 
@@ -26,9 +26,9 @@ def rp_calc():
             no_of_subj += 1
             subj_names.append("Mother Tongue")
 
-        return render_template('rp_calc.html', no_of_subj=no_of_subj, subj_names=subj_names)
-    else:
-        return render_template('rp_calc.html', no_of_subj=None)
+        return render_template('rp_calc.html', page="second", subj_names=subj_names)
+    elif request.method == "GET": # GET
+        return render_template('rp_calc.html', page="first")
 
 
 @app.route('/rp_display/', methods=["POST"])

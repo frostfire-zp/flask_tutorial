@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1>Rank Point Calculator</h1>
-{% if no_of_subj == None %}
+{% if page == "first" %}
 <form action="{{url_for('rp_calc')}}" method="POST">
     <p>
         <label for="include_pw">
@@ -39,7 +39,7 @@
                 Grade
             </th>
         </tr>
-        {% for i in range(no_of_subj) %}
+        {% for i in range(subj_names|length) %}
         <tr>
             <td>
                 {{subj_names[i]}}
