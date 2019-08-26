@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Rank Point Calculator</h1>
+
+<form action="{{url_for('rp_calc')}}" method="POST">
+    <p>
+        <label for="include_pw">
+            Do you wish to include result of PW?
+        </label>
+    </p>
+    <p>
+        <select name="include_pw" id="include_pw">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </p>
+    <p>
+        <label for="include_mtl">
+            Do you wish to include result of Mother Tongue Language?
+        </label>
+    </p>
+    <p>
+        <select name="include_mtl" id="include_mtl">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </p>
+    <input type="submit" value="Update">
+</form>
+
+{% endblock %}

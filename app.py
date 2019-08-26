@@ -26,9 +26,9 @@ def rp_calc():
             no_of_subj += 1
             subj_names.append("Mother Tongue")
 
-        return render_template('rp_calc.html', page="second", subj_names=subj_names)
-    elif request.method == "GET": # GET
-        return render_template('rp_calc.html', page="first")
+        return render_template('rp_calc2.html', subj_names=subj_names)
+    elif request.method == "GET":  # GET
+        return render_template('rp_calc1.html')
 
 
 @app.route('/rp_display/', methods=["POST"])
